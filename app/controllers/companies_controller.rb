@@ -68,7 +68,7 @@ end
 protected
 
 def set_company
-	@question = Question.find(params[:id])
+	@company = Company.find(params[:id])
 end
 
 def company_params

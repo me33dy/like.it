@@ -1,13 +1,10 @@
 Likeit::Application.routes.draw do
 
-  get "product/index"
-  get "product/new"
-  get "product/update"
-  get "product/create"
-  get "product/destroy"
-  get "product/show"
-  get "product/edit"
+  
   resources :companies
+  resources :products
+
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
