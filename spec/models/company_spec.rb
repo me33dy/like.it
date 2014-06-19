@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Company do
-	before { @company = Company.new(name: "test", email: "test@test.com", url: "test_url.com", mission: "hello world")}
+	before { @company = Company.new(name: "test", email: "test@test.com", url: "test_url.com", mission: "hello world", password: "password", password_confirmation: "password")}
 
 	subject { @company }
 
@@ -9,6 +9,14 @@ describe Company do
 	it { should respond_to(:email) }
 	it { should respond_to(:url) }
 	it { should respond_to(:mission) }
+
+	#the password, password_digest, password_confirmation, and salt for authentication
+	it { should respond_to(:password) }
+	it { should respond_to(:salt) }
+	it { should respond_to(:password_digest) }
+	it { should respond_to(:password_confirmation) }
+
+
 
 	it { should be_valid }
 
@@ -63,6 +71,27 @@ describe Company do
 
 	it { should_not be_valid }
 	end
+
+	#testing password field must be present
+	describe "when password field is empty" do
+		no_password_company = Company.new(name: "test", email: "test@test.com", url: "test_url.com", mission: "hello world", password: " ", password_confirmation: " ")
+		it "should not be valid" do
+		expect(no_password_company).to be_invalid
+		end
+	end
+
+	# test password length must belonger than 6 characters
+	describe "when password is too short" do
+		short_password_company = Company.new(name: "test", email: "test@test.com", url: "test_url.com", mission: "hello world", password: "short", password_confirmation: "short")
+		it "should not be valid" do
+		expect(short_password_company).to be_invalid
+		end
+	end
+
+	#check if password_digest is valid when company data saved
+	
+
+
 
 
 
