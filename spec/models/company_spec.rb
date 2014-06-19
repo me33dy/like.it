@@ -12,7 +12,57 @@ describe Company do
 
 	it { should be_valid }
 
+	#check must have a name presence to be valid
+	describe "when name is not present" do
+		before { @company.name = " " }
+		it { should_not be_valid }
+	end
 
+	describe "when name is too long" do
+	before { @company.name = "a" * 51 }
+	it { should_not be_valid }
+	end
+
+	#check must have the email present to be valid 
+	describe "when email is not present" do
+		before { @company.email = " " }
+		it { should_not be_valid }
+	end
+
+
+	#check email must in correct format to be valid 
+	describe "when email format is invalid" do
+	it "should be invalid" do
+	  addresses = %w[company@sample,com test_at_sample.org example.test@sample.
+	   sample@efr+ede.com sample@efr..com]
+	  addresses.each do |invalid_address|
+	    @company.email = invalid_address
+	    expect(@company).not_to be_valid
+	  end
+	end
+	end
+
+	#check email is in incorrect format should be not valid
+	describe "when email format is valid" do
+	it "should be valid" do
+	  addresses = %w[company@sample.COM A_US-ER@f.b.org frst.lst@sample.de a+b@ede.jp]
+	  addresses.each do |valid_address|
+	    @company.email = valid_address
+	    expect(@company).to be_valid
+	  end
+	end
+	end
+
+	#check the email must be unique in the database to be valid
+	describe "when email address is already taken" do
+	before do
+	  company_with_same_email = @company.dup
+	  company_with_same_email.email = @company.email.upcase
+	  company_with_same_email.save
+	end
+
+	it { should_not be_valid }
+	end
 
 
 
