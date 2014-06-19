@@ -1,7 +1,7 @@
-class CompanyController < ApplicationController
+class CompaniesController < ApplicationController
 		before_action :set_company, :only => [:show, :edit, :update, :destroy]
 		respond_to :html, :json	
-end
+
 
 	
 
