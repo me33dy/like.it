@@ -98,7 +98,8 @@ describe Company do
 	# describe "account authenticate method" do
  #    end
 
-
+ 	describe "product model association" do
+ 	end
 
 
 
