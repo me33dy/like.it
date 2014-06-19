@@ -6,8 +6,9 @@ end
 	
 
 	def index
-		@companies = Company.all
+		@companies = Company.all.order("name desc")
 		respond_with @companies
+
 	end
 
 	def new
