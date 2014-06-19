@@ -15,6 +15,8 @@ describe Company do
 	it { should respond_to(:salt) }
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password_confirmation) }
+	# respond to relationship with products
+	it {should respond_to(:products) }
 
 
 
