@@ -2,9 +2,8 @@ class Company < ActiveRecord::Base
 
   has_many :products
 
-
-
 	attr_accessor :password
+
 	validates :name, presence: true, length: { maximum: 50 }
   	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
@@ -37,8 +36,6 @@ class Company < ActiveRecord::Base
   		self.password_digest = BCrypt::Engine.hash_secret(self.password, self.salt)
   		self.password = nil
   	end
-
-
 
 
 end

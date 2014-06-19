@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: likeit_development
+  database: 
   pool: 5
  
 
@@ -45,7 +45,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: likeit_test
+  database: 
   pool: 5
 
 
@@ -54,5 +54,5 @@ production:
   encoding: unicode
   database: likeit_production
   pool: 5
-  username: likeit
+  username: 
   password:
