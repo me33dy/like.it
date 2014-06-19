@@ -88,8 +88,13 @@ describe Company do
 		end
 	end
 
-	#check if password_digest is valid when company data saved
+	describe "when password and confirmation do not match" do
+		before { @company.password_confirmation = "mismatch" }
+		it { should_not be_valid }
+	end
 	
+	# describe "account authenticate method" do
+ #    end
 
 
 
