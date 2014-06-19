@@ -99,7 +99,15 @@ describe Company do
  #    end
 
  	describe "product model association" do
+ 		before { @company.save }
+ 		let!(:old_product) { FactoryGirl.create(:product, company: @company, created_at: 1.day.ago) }
+ 		let!(:new_product) { FactoryGirl.create(:product, company: @company, created_at: 1.hour.ago) }
+ 		it "should have correct post in time descend order" do
+ 			expect(@company.products.to_a).to eq [new_product, old_product]
+ 		end
  	end
+
+ 	
 
 
 
