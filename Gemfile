@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 1.2'
 #set up gem for testing and developing environment
 group :development, :test do
 	gem 'rspec-rails'
+	gem 'rspec-its'
 end
 
 #install factory girls for testing
