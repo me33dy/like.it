@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
     
   end
 
-  def create
+  def create 
   	@company = Company.find_by(email: params[:session][:email])
-  	if @company && @company.authenticate(params[:session][:email]) 
-  		session[:remember_token] = @company.id
+  	if @company && @company.authenticate(params[:session][:password]) 
+  		session[:remember_token] = @company.id.to_s
   		@current_user = @user
   		redirect_to @company
   	else
