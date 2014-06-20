@@ -36,6 +36,4 @@ class Company < ActiveRecord::Base
   		self.password_digest = BCrypt::Engine.hash_secret(self.password, self.salt)
   		self.password = nil
   	end
-
-
 end
