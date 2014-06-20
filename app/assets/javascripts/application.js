@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
+//= require angular-resource
 //= require skrollr
 //= require skrollr.menu
+
 //= require_tree .

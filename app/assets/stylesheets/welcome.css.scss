@@ -16,13 +16,18 @@ body{
 }
 
 #introbox{
+background-color: #3C4661;
+}
 
+#introbox h1 {
+	padding-top:15%;
+	margin:0;
+	text-align: center;
+	font-size: 100px;
 }
 
 .sectionbox{
-	background-color: #3C4661;
 	height:720px;
-	width:100%;
 }
 
 h1{
@@ -31,16 +36,31 @@ h1{
 	color:white;
 }
 
-#whoarewe{
+
+#whoarewe {
 	
 }
 
-#introbox h1 {
-	padding-top:15%;
-	margin:0;
-	text-align: center;
-	font-size: 100px;	
-	
+.whodiv{
+	height:500px;
+	line-height: 250px;
+	width:32%;
+	font-size: 15px;
+	margin-right:4px;
+	float:left;
+    text-align: center;
+}
+
+.whodiv a {
+	color: #3C4661;
+	text-decoration: none;
+	position:relative;
+	top:115px;
+}
+
+.whodiv a:hover{
+	color:red;
+	-webkit-transition: all 400ms;
 }
 
 h2 {
