@@ -1,2 +1,12 @@
 <h1>Sessions#new</h1>
 <p>Find me in app/views/sessions/new.html.erb</p>
+
+
+<div class = "signupform"> 
+	<p>Sign Up Page<p>
+	<%= form_for :session, :url => sessions_path do |c| %>
+		<div class ="formfield">Email:</div><div> <%= c.text_field :email %> </div>
+		<div class ="formfield">Password</div><div> <%= c.password_field :password %> </div>
+	<%= c.submit %>
+	<% end %>
+</div>

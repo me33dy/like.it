@@ -17,11 +17,11 @@ class CompaniesController < ApplicationController
 
 
   def create
-    @company = Company.new(question_params)
+    @company = Company.new(company_params)
 
     if @company.save
-      respond_to do |format|
-        format.html { redirect_to questions_path }
+      	respond_to do |format|
+        format.html { redirect_to @company }
         format.json { render json: @company, status: :created }
       end
     else
@@ -50,9 +50,9 @@ class CompaniesController < ApplicationController
 		respond_to do |format|
 			format.html {render 'edit'}
 			format.json {render json: @company.errors, status: :unprocessable_entity}
+			end
 		end
 	end
-end
 
 
 	def destroy
@@ -69,7 +69,7 @@ end
 protected
 
 def set_company
-	@question = Question.find(params[:id])
+	@company = Company.find(params[:id])
 end
 
 def company_params

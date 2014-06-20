@@ -1,8 +1,18 @@
 Likeit::Application.routes.draw do
 
 
-  resource :sessions
+
+  resource :sessions, only: [:new, :create, :destroy]
+
   resources :companies
+  resources :products
+
+  root 'welcome#index'
+  #change url to sign_up from companies/new
+  match '/sign_up', to: 'companies#new', via: 'get'
+
+  #change url to sign_in from sessions/new
+  match '/sign_in', to: 'sessions#new', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
