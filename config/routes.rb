@@ -2,6 +2,7 @@ Likeit::Application.routes.draw do
 
 
   resource :sessions, only: [:new, :create, :destroy]
+
   resources :companies
   resources :products
 
@@ -11,6 +12,7 @@ Likeit::Application.routes.draw do
 
   #change url to sign_in from sessions/new
   match '/sign_in', to: 'sessions#new', via: 'get'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
