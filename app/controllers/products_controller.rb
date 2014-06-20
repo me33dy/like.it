@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    respond_with @products
+    respond_with @products 
   end
 
   def new
@@ -70,7 +70,7 @@ def set_product
 end
 
 def product_params
-  params.require(:product).permit(:name, :requirement, :reward, :description, :company_id)
+  params.require(:product).permit(:image, :name, :requirement, :reward, :description, :company_id)
 end
 
 

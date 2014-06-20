@@ -50,6 +50,9 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# gem to upload photo
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

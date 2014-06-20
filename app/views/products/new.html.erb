@@ -1,2 +1,11 @@
 <h1>Product#new</h1>
 <p>Find me in app/views/product/new.html.erb</p>
+
+<fieldset>
+<legend>Add New Product</legend>
+<%= form_for @product, :html => { :multipart => true } do |f| %>
+
+  <%= f.file_field :image, class: 'form-control' %>
+  <%= f.submit "Product", class: 'button radius'%>
+<% end %> 
+</fieldset>
