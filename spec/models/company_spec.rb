@@ -94,6 +94,10 @@ describe Company do
 		before { @company.password_confirmation = "mismatch" }
 		it { should_not be_valid }
 	end
+
+	describe "company model authentication" do
+		
+	end 
 	
 	# describe "account authenticate method" do
  #    end
@@ -105,7 +109,18 @@ describe Company do
  		it "should have correct post in time descend order" do
  			expect(@company.products.to_a).to eq [new_product, old_product]
  		end
+ 		it "should destroy the associated products when a company is destroyed" do
+ 			products = @company.products.to_a
+ 			@company.destroy
+ 			expect(products).not_to be_empty
+ 			products.each do |p|
+ 				expect(Product.where(id: p.id)).to be_empty
+ 			end
+ 		end
+
  	end
+
+
 
  	
 

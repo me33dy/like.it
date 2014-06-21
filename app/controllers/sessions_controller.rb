@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   	@company = Company.find_by(email: params[:session][:email])
   	if @company && @company.authenticate(params[:session][:password]) 
   		session[:remember_token] = @company.id.to_s
-  		@current_user = @user
+  		@current_company = @company
   		redirect_to @company
   	else
   		render 'new'

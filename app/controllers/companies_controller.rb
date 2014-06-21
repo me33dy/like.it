@@ -20,6 +20,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
+    	@current_company = @company
       	respond_to do |format|
         format.html { redirect_to @company }
         format.json { render json: @company, status: :created }
