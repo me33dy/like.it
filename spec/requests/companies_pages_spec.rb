@@ -6,6 +6,7 @@ describe "CompaniesPages" do
 	describe "Sign up page for companies" do 
 		before { visit sign_up_path }
 		it { should have_content("Sign Up") }
+		it { should have_title("Like It ? | New Company Sign Up")}
 	end
 
 	describe "sign up" do
@@ -13,9 +14,15 @@ describe "CompaniesPages" do
 
 		let(:submit) { "Create Company" }
 
-		describe "with incalid information" do
+		describe "with invalid information" do
 			it "should not create a new company" do
 				expect { click_button submit }.not_to change(Company, :count)
+			end
+			describe "after submission" do
+				before { click_button submit }
+
+				it { should have_title("Like It ? | New Company Sign Up") }
+				it { should have_content("error") }
 			end
 		end
 
