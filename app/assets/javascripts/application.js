@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require angular
 //= require angular-resource
 //= require skrollr
 //= require skrollr.menu
 
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

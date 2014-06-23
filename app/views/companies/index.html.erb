@@ -1,14 +1,22 @@
 
-<div x-ng-app="like-app"
+<div x-ng-app="like-app">
 	<div x-ng-controller="ProductCtrl">
 
-				<div ng-repeat ="product in products">
-					Name:{{product.name}} <br>
-					Requirement:{{product.requirement}}<br>
-					Company ID:{{product.company_id}}<br>
-					Description:{{product.description}}<br>
-					Reward:{{product.reward}}<br>
-				</div>
+		<input type= "button" class="button" value="Add a new Product" data-reveal-id="myModal" />
 
-		</div>
+			<div id ="myModal" class= "reveal-modal" data-reveal>
+		  		<form ng-submit="saveProduct()" class="form-group">
+					<label class="modaltext" for="name">Product Name:</label>
+		  			<input ng-model="newProduct.name" name="name" class="form-control" id="nameinput">
+
+		  			<label class="modaltext"for="requirement">Requirement:</label>
+		  			<input ng-model="newProduct.requirement" name="requirement" class="form-control" id="requirementinput">
+
+		  			<label class="modaltext" for="reward">Reward:</label>
+		  			<input ng-model="newProduct.reward" name="note" class="form-control"></label> <br>
+
+		  			<button class="button">Save Product</button>
+				</form>
+			</div>
+	</div>		
 </div>

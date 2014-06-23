@@ -30,7 +30,7 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'active_model_serializers'
 gem 'angularjs-rails'
 
-
+gem 'foundation-rails'
 
 #set up gem for testing and developing environment
 group :development, :test do
