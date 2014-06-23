@@ -1,6 +1,7 @@
 
 <% provide(:title, 'New Company Sign Up') %>
 <%= form_for @company do |c| %>
+<%= render 'shared/error_messages' %>
 <div class = "signupform"> 
 	<p>Sign Up Page<p>
 	<div class ="formfield">Company Name:</div> <div><%= c.text_field :name %> </div>
@@ -10,7 +11,8 @@
 	<div class ="formfield">Password</div><div> <%= c.password_field :password %> </div>
 	<div class ="formfield">Confirm Password</div><div> <%= c.password_field :password_confirmation %> </div>
 	<%= c.submit %>
-	<%end%>
+		<%end%>
+		</div>
 </div>
 
 
