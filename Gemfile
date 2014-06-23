@@ -21,8 +21,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+
 gem 'skrollr-rails'
+# For facebook log in integration
+gem 'omniauth-facebook', '1.4.0'
 
 
 gem 'active_model_serializers'
@@ -30,18 +32,18 @@ gem 'angularjs-rails'
 
 gem 'foundation-rails'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-
-
 #set up gem for testing and developing environment
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'rspec-its'
+
 end
 
-#install factory girls for testing
+#install factory girls, capybara and selenium for testing 
 group :test do
 	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'selenium-webdriver'
 end
 
 group :doc do

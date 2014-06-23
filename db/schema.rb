@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619103756) do
+ActiveRecord::Schema.define(version: 20140623082457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,16 +27,37 @@ ActiveRecord::Schema.define(version: 20140619103756) do
     t.string   "salt",            null: false
   end
 
+  create_table "product_promotions", force: true do |t|
+    t.integer  "promoter_id",          null: false
+    t.integer  "promoting_product_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_promotions", ["promoter_id", "promoting_product_id"], name: "index_promoter_and_promoting_product_on_promotion", unique: true, using: :btree
+  add_index "product_promotions", ["promoter_id"], name: "index_product_promotions_on_promoter_id", using: :btree
+  add_index "product_promotions", ["promoting_product_id"], name: "index_product_promotions_on_promoting_product_id", using: :btree
+
   create_table "products", force: true do |t|
     t.string   "name",        null: false
     t.integer  "requirement", null: false
     t.string   "reward",      null: false
     t.string   "description"
-    t.integer  "company_id"
+    t.integer  "company_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "products", ["company_id"], name: "index_products_on_company_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+  end
 
 end
