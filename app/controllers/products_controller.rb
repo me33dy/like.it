@@ -9,13 +9,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product = Company.first.products.build
   end
 
 
   def create
-    @product = Product.new(product_params)
-
+    @product = Company.first.products.new(product_params)
     if @product.save
       respond_to do |format|
         format.html { redirect_to products_path }
