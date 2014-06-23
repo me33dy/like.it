@@ -1,3 +1,23 @@
-hi
 
-<%= @company.name %>
+<h1> Hello, <%= @company.name %> </h1>
+
+
+
+
+
+<%= form_for @product do |p| %>
+<div class = "signupform"> 
+	<p>Sign Up Page<p>
+	<div class ="formfield">Product Name:</div> <div><%= p.text_field :name %> </div>
+	<div class ="formfield">Requirement:</div><div> <%= p.text_field :requirement %> </div>
+<!-- 	<div class ="formfield">Website:</div><div> <%= p.text_field :url %> </div>
+	<div class ="formfield">Mission:</div><div> <%= p.text_field :mission %> </div> -->
+	<div class ="formfield">Reward</div><div> <%= p.password_field :reward %> </div>
+	<div class ="formfield">Company Id</div><div> <%= p.password_field :company_id %> </div>
+	<%= p.submit %>
+	<% end %>
+</div>
+
+<form>
+	
+

@@ -9,6 +9,21 @@ src: URL('/assets/brandon_grotesque_bold.ttf')
 }
 
 
+.signupin{
+	width:48%;
+	padding-top:20%;
+	height:650px;
+	float:left;
+	margin-right:20px;
+	text-align: center;
+
+}
+
+.signupin a:hover{
+	color:red;
+	-webkit-transition: all 400ms;
+}
+
 
 body{
 	padding:0;
@@ -62,8 +77,12 @@ h1{
 	margin:0;
 }
 
-#firstmini{
-	background-color:#ebeff2;
+hr {
+	width:80%;
+	margin:0 auto;
+	border:none;
+	height:2px;
+	background-color:black;
 }
 
 .whodiv a {
