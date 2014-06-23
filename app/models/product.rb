@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
   belongs_to :company
+  has_many :product_promotions, foreign_key: "promoting_product_id"
+  has_many :promoters, through: :product_promotions
 
   #set default order to show created newest first
   default_scope -> { order("created_at DESC") }
