@@ -28,7 +28,7 @@ gem 'skrollr-rails'
 gem 'active_model_serializers'
 gem 'angularjs-rails'
 
-
+gem 'foundation-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 

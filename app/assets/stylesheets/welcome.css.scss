@@ -28,6 +28,18 @@ background-color: #3C4661;
 
 .sectionbox{
 	height:720px;
+	padding:20px 20px 0px 20px;
+}
+
+.minibox{
+	padding-top:10%;
+	height:360px;
+}
+
+p{
+	font-family: 'Brandon Grotesque Bold';
+	text-align: center;
+	font-size:70px;
 }
 
 h1{
@@ -37,22 +49,24 @@ h1{
 }
 
 
-#whoarewe {
-	
-}
-
 .whodiv{
-	height:500px;
-	line-height: 250px;
+	height:650px;
 	width:32%;
 	font-size: 15px;
-	margin-right:4px;
+	margin-right:20px;
 	float:left;
     text-align: center;
 }
 
+.whodiv:last-child{
+	margin:0;
+}
+
+#firstmini{
+	background-color:#ebeff2;
+}
+
 .whodiv a {
-	color: #3C4661;
 	text-decoration: none;
 	position:relative;
 	top:115px;
@@ -61,6 +75,10 @@ h1{
 .whodiv a:hover{
 	color:red;
 	-webkit-transition: all 400ms;
+}
+
+#whoarewe {
+	background-color: #ebeff2;
 }
 
 h2 {
