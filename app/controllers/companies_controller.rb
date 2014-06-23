@@ -57,7 +57,6 @@ class CompaniesController < ApplicationController
 
 
 	def destroy
-
 		@company.destroy
 
 		respond_to do |format|
