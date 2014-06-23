@@ -1,11 +1,22 @@
 Likeit::Application.routes.draw do
 
 
-  resource :sessions
+  resource :sessions, only: [:new, :create, :destroy]
+
   resources :companies
   resources :products
 
   root 'welcome#index'
+  #change url to sign_up from companies/new
+  match '/sign_up', to: 'companies#new', via: 'get'
+
+  #change url to sign_in from sessions/new
+  match '/sign_in', to: 'sessions#new', via: 'get'
+
+  # set facebook log in to use user_sessions controller
+  match 'auth/:provider/callback', to: 'user_sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'user_signout', to: 'user_sessions#destroy', as: 'user_signout', via: [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

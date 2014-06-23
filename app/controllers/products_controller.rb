@@ -37,18 +37,19 @@ class ProductsController < ApplicationController
   end
 
   def update
+
     if @product.update(product_params)
+        respond_to do |format|
+          format.html { redirect_to products_path}
+          format.json { render nothing: true, status: :no_content}
+        end
+    else 
       respond_to do |format|
-        format.html { redirect_to products_path}
-        format.json { render nothing: true, status: :no_content}
-    end
-  else 
-    respond_to do |format|
-      format.html {render 'edit'}
-      format.json {render json: @product.errors, status: :unprocessable_entity}
+        format.html {render 'edit'}
+        format.json {render json: @product.errors, status: :unprocessable_entity}
+      end
     end
   end
-end
 
 
   def destroy

@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
 
-  has_many :products
+  has_many :products, dependent: :destroy
 
 	attr_accessor :password
 
@@ -13,6 +13,7 @@ class Company < ActiveRecord::Base
     #validate confirmation of password
     # validates_confirmation_of :password, message: "confirmation does not match"
     # validates_presence_of :password_confirmation, if: :password_changed?
+    
   	#hash the password before user data saved
   	before_save :hash_password
 
@@ -36,6 +37,4 @@ class Company < ActiveRecord::Base
   		self.password_digest = BCrypt::Engine.hash_secret(self.password, self.salt)
   		self.password = nil
   	end
-
-
 end

@@ -2,12 +2,20 @@
 <html>
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-  <title>Like It ?</title>
+  <title>Like It ? | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<div id="user-widget">
+		<% if current_user %>
+		Welcome <strong><%= current_user.name %></strong>!
+		<%= link_to "Sign out", user_signout_path, id: "sign_out" %>
+		<% else %>
+		<% end %>
+	</div>
 
 
 		<%= yield %>

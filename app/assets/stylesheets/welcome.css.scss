@@ -9,6 +9,21 @@ src: URL('/assets/brandon_grotesque_bold.ttf')
 }
 
 
+.signupin{
+	width:48%;
+	padding-top:20%;
+	height:650px;
+	float:left;
+	margin-right:20px;
+	text-align: center;
+
+}
+
+.signupin a:hover{
+	color:red;
+	-webkit-transition: all 400ms;
+}
+
 
 body{
 	padding:0;
@@ -16,14 +31,31 @@ body{
 }
 
 #introbox{
+background-color: #3C4661;
+}
 
+#introbox h1 {
+	padding-top:15%;
+	margin:0;
+	text-align: center;
+	font-size: 100px;
 }
 
 .sectionbox{
-	background-color: #3C4661;
 	height:720px;
-	width:100%;
+	padding:20px 20px 0px 20px;
 }
+
+.minibox{
+	padding-top:10%;
+	height:360px;
+}
+
+/*p{
+	font-family: 'Brandon Grotesque Bold';
+	text-align: center;
+	font-size:70px;
+}*/
 
 h1{
 	margin:0;
@@ -31,16 +63,41 @@ h1{
 	color:white;
 }
 
-#whoarewe{
-	
+
+.whodiv{
+	height:650px;
+	width:32%;
+	font-size: 15px;
+	margin-right:20px;
+	float:left;
+    text-align: center;
 }
 
-#introbox h1 {
-	padding-top:15%;
+.whodiv:last-child{
 	margin:0;
-	text-align: center;
-	font-size: 100px;	
-	
+}
+
+hr {
+	width:80%;
+	margin:0 auto;
+	border:none;
+	height:2px;
+	background-color:black;
+}
+
+.whodiv a {
+	text-decoration: none;
+	position:relative;
+	top:115px;
+}
+
+.whodiv a:hover{
+	color:red;
+	-webkit-transition: all 400ms;
+}
+
+#whoarewe {
+	background-color: #ebeff2;
 }
 
 h2 {

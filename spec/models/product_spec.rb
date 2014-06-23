@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'rspec/its'
 
 describe Product do
 

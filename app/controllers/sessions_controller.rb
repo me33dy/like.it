@@ -3,11 +3,11 @@ class SessionsController < ApplicationController
     
   end
 
-  def create
+  def create 
   	@company = Company.find_by(email: params[:session][:email])
-  	if @company && @company.authenticate(params[:session][:email]) 
-  		session[:remember_token] = @company.id
-  		@current_user = @user
+  	if @company && @company.authenticate(params[:session][:password]) 
+  		session[:remember_token] = @company.id.to_s
+  		@current_company = @company
   		redirect_to @company
   	else
   		render 'new'
@@ -19,3 +19,4 @@ class SessionsController < ApplicationController
   	redirect_to 'root'
   end
 end
+
