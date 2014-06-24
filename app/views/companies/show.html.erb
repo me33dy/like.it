@@ -21,6 +21,8 @@
         <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
          <input type= "button" class="button" value="Add a new Product" data-reveal-id="myModal" />
 
+
+
          <div id ="myModal" class= "reveal-modal" data-reveal>
           <form ng-submit="saveProduct($event)" class="form-group">
             <label class="modaltext" for="name">Product Name:</label>
@@ -34,6 +36,7 @@
 
             <label class="modaltext" for="description">Description:</label>
             <input ng-model="newProduct.description" name="description" class="form-control" id="nameinput" required>
+            
             <br>
             <input type="submit" value="Save Product">
           </form>
@@ -55,10 +58,13 @@
                    <form x-ng-show="product.editing" ng-submit="updateProduct(product);" class="form-group">
                       <label for="name">Name:</label>
                       <input ng-model="product.name" name="name" class="form-control">
-                      <label for="description">Description:</label>
-                      <input ng-model="product.description" name="description" class="form-control">
-                      <label for="note">Note:</label>
-                      <input ng-model="product.note" name="note" class="form-control">
+
+                      <label for="requirement">Requirement:</label>
+                      <input ng-model="product.requirement" name="requirement" class="form-control">
+
+                      <label for="note">Description:</label>
+                      <input ng-model="product.description" name="note" class="form-control">
+
                       <label for="reward">Reward:</label>
                       <input ng-model="product.reward" name="reward" class="form-control">
                       <br>

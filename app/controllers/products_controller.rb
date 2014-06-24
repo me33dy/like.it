@@ -70,7 +70,7 @@ def set_product
 end
 
 def product_params
-  params.require(:product).permit(:name, :requirement, :reward, :description, :company_id)
+  params.require(:product).permit(:name, :requirement, :reward, :description, :company_id, :image)
 end
 
 
