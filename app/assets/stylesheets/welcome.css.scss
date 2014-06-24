@@ -51,16 +51,20 @@ background-color: #3C4661;
 	height:360px;
 }
 
-/*p{
+.minibox p{
 	font-family: 'Brandon Grotesque Bold';
 	text-align: center;
 	font-size:70px;
-}*/
+}
 
 h1{
 	margin:0;
 	font-family: 'Brandon Grotesque Bold' ;
 	color:white;
+}
+
+.button{
+	border-radius:10px;
 }
 
 
@@ -104,4 +108,11 @@ h2 {
 	font-family: "Oswald";
 	color:white;
 	text-align: center;
+}
+
+#nav {
+	font-family: 'Arial';
+	font-size: 20px;
+	float:right;
+	font-weight: bold;
 }

@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140623082457) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,7 +43,7 @@ ActiveRecord::Schema.define(version: 20140623082457) do
     t.integer  "requirement",        null: false
     t.string   "reward",             null: false
     t.string   "description"
-    t.integer  "company_id",  null: false
+    t.integer  "company_id",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

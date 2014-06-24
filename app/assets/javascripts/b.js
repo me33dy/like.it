@@ -21,7 +21,7 @@ likeApp.factory('Product', ['$resource', function($resource) {
 
 
 likeApp.controller('ProductCtrl', ['Product', '$scope', function(Product, $scope) {
-  $scope.products= [];
+  $scope.products = [];
    $scope.newProduct = new Product();
 
   Product.query(function(products) {
@@ -29,15 +29,16 @@ likeApp.controller('ProductCtrl', ['Product', '$scope', function(Product, $scope
     $scope.products = products;
   });
 
- 	$scope.saveProduct = function () {
-      $scope.newProduct$save(function(product) {
+ 	$scope.saveProduct = function(event) {
+      event.preventDefault();
+      $scope.newProduct.$save(function(product) {
         $scope.products.push(product)
         $scope.newProduct = new Product();
       });
     }
 
-    $scope.deleteProduct = function (product) {
-      product.$delete(function() {
+    $scope.deleteProduct = function(product) {
+        product.$delete(function() {
         position = $scope.products.indexOf(product);
         $scope.products.splice(position, 1);
       }, function(errors) {
@@ -52,6 +53,8 @@ likeApp.controller('ProductCtrl', ['Product', '$scope', function(Product, $scope
 
     $scope.hideProduct = function(product) {
       product.details = false;
+      product.editing = false;
+      console.log('hi');
     }
 
     $scope.editProduct = function(product) {
