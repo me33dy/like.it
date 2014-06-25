@@ -18,4 +18,12 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   # validates_attachment_presence :image
   validates_attachment_content_type :image, :content_type => ['image/jpeg']
+
+  def promoting?(user)
+    product_promotions.find_by(promoter_id: user.id)
+  end
+
+  def promote_this!(user)
+    product_promotions.create!(promoter_id: user.id)
+  end
 end

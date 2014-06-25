@@ -1,246 +1,126 @@
+
 <% @products.each do |p|%>
 
 <%= image_tag p.image.url(:medium)%>
 <%end%>
 
-lkasdjflkasjdf;lkj
 <div class="row">
     <div class="large-12 columns">
- 
-      <div class="row" style="margin-bottom:20px">
-        <div class="large-12 columns">
- 
-          <nav class="top-bar" data-topbar>
-            <ul class="title-area">
-               
-              <li class="name">
-                <h1>
-                  <a href="#">
-                    General Listing
-                  </a>
-                </h1>
-              </li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-            </ul>
-         
-            <section class="top-bar-section">
-               
-              <ul class="right">
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                  <a href="#">Main Item 1</a>
-                  <ul class="dropdown">
-                    <li><label>Section Name</label></li>
-                    <li class="has-dropdown">
-                      <a href="#" class="">Has Dropdown, Level 1</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Dropdown Options</a></li>
-                        <li><a href="#">Dropdown Options</a></li>
-                        <li><a href="#">Level 2</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><label>Section Name</label></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">See all →</a></li>
-                  </ul>
-                </li>
-                <li class="divider"></li>
-                <li><a href="#">Main Item 2</a></li>
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                  <a href="#">Main Item 3</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">See all →</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </section>
-          </nav>
-           
-        </div>
+      <div class="panel">
+        <div id="user-widget">
+
+    <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", user_signout_path, id: "sign_out", class: "button tiny radius" %>
+    <%= link_to "General Listing", products_path, class: "button tiny radius"%>
+    <% else %>
+    <% end %>
+
+  </div>
       </div>
- 
-     
- 
-      <div class="row">
- 
-   
- 
-        <!-- <div class="large-4 small-12 columns">
- 
-          <img src="http://placehold.it/500x500&text=Market Place">
- 
-          <div class="hide-for-small panel">
-            <h3>Header</h3>
-            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
-            </h5>
-          </div>
- 
-          <a href="#">
-          <div class="panel callout radius">
-            <h6>99  items in your cart</h6>
-          </div>
-          </a>
- 
-        </div> -->
- 
-     
- 
-        <div class="large-12 columns">
-          <div class="row">
- 
-            <div class="large-4 small-12 columns">
-              <img src="http://placehold.it/1000x1000&text=Product">
- 			  <div class="row">
-
- 			  	<div class="large-12 columns">
-		            <div class="panel" style="margin-bottom:0px">Requirement:</div>
-		        </div>  
-			    
-		        <div class="large-12 columns">
-			        <div class="panel" style="margin-bottom:0px">Rewards:</div>
-			    </div>
-
-			    <div class="large-12 columns">
-			        <div class="button" style="width: 100%">Promote This!!</div>
-			    </div>
-
- 			  </div>
-              
-            </div>
-
-            <div class="large-4 small-12 columns">
-              <img src="http://placehold.it/1000x1000&text=Product">
- 			  <div class="row">
-
- 			  	<div class="large-12 columns">
-		            <div class="panel" style="margin-bottom:0px">Requirement:</div>
-		        </div>  
-			    
-		        <div class="large-12 columns">
-			        <div class="panel" style="margin-bottom:0px">Rewards:</div>
-			    </div>
-
-			    <div class="large-12 columns">
-			        <div class="button" style="width: 100%">Promote This!!</div>
-			    </div>
-
- 			  </div>
-              
-            </div>
-
-            <div class="large-4 small-12 columns">
-              <img src="http://placehold.it/1000x1000&text=Product">
- 			  <div class="row">
-
- 			  	<div class="large-12 columns">
-		            <div class="panel" style="margin-bottom:0px">Requirement:</div>
-		        </div>  
-			    
-		        <div class="large-12 columns">
-			        <div class="panel" style="margin-bottom:0px">Rewards:</div>
-			    </div>
-
-			    <div class="large-12 columns">
-			        <div class="button" style="width: 100%">Promote This!!</div>
-			    </div>
-
- 			  </div>
-              
-            </div>
-
-            <div class="large-4 small-12 columns">
-              <img src="http://placehold.it/1000x1000&text=Product">
- 			  <div class="row">
-
- 			  	<div class="large-12 columns">
-		            <div class="panel" style="margin-bottom:0px">Requirement:</div>
-		        </div>  
-			    
-		        <div class="large-12 columns">
-			        <div class="panel" style="margin-bottom:0px">Rewards:</div>
-			    </div>
-
-			    <div class="large-12 columns">
-			        <div class="button" style="width: 100%">Promote This!!</div>
-			    </div>
-
- 			  </div>
-              
-            </div>
-
-            <div class="large-4 small-12 columns">
-              <img src="http://placehold.it/1000x1000&text=Product">
- 			  <div class="row">
-
- 			  	<div class="large-12 columns">
-		            <div class="panel" style="margin-bottom:0px">Requirement:</div>
-		        </div>  
-			    
-		        <div class="large-12 columns">
-			        <div class="panel" style="margin-bottom:0px">Rewards:</div>
-			    </div>
-
-			    <div class="large-12 columns">
-			        <div class="button" style="width: 100%">Promote This!!</div>
-			    </div>
-
- 			  </div>
-              
-            </div>
-
-            <div class="large-4 small-12 columns">
-              <img src="http://placehold.it/1000x1000&text=Product">
- 			  <div class="row">
-
- 			  	<div class="large-12 columns">
-		            <div class="panel" style="margin-bottom:0px">Requirement:</div>
-		        </div>  
-			    
-		        <div class="large-12 columns">
-			        <div class="panel" style="margin-bottom:0px">Rewards:</div>
-			    </div>
-
-			    <div class="large-12 columns">
-			        <div class="button" style="width: 100%">Promote This!!</div>
-			    </div>
-
- 			  </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
- 
- 
-     
- 
-      <footer class="row">
-        <div class="large-12 columns"><hr/>
-          <div class="row">
- 
-            <div class="large-6 columns">
-              <p>© Copyright no one at all. Go to town.</p>
-            </div>
- 
-          </div>
-        </div>
-      </footer>
- 
-     
- 
     </div>
   </div>
+   
+  <div class="row">
+  
+     
+    <div class="large-3 columns hide-for-small">
+      <div class="panel">
+        <h5><%= current_user.name %>'s performance</h5>
+          <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+          <section class="section">
+            <h5 class="panel">Products claimed:</h5>
+          </section>
+          <section class="section">
+            <h5 class="panel">Likes Generated:</h5>
+          </section>
+          <section class="section">
+            <h5 class="panel">Number of Rewards earned:</h5>
+          </section>
+          <section class="section">
+            <h5 class="panel">Products' pending</h5>
+          </section>
+        </div>
+ 
+      </div>
+    </div>
+    
+     
+     
+    <div class="large-6 columns">
+       
+      <div class="row">
+        <div class="large-12 columns small-12"><img src="http://placehold.it/500x300&text=[img]"/></div>
+        <div class="large-12 columns">
+
+            <div class="panel" style="float:left">Like Count:</div>
+            <div class="panel" style="float:right">Rewards:</div>
+            <input style="float: middle" placeholder="facebook post url">
+          
+        </div>
+      </div>
+       
+ 
+      <hr/>
+ 
+       
+      <!-- <div class="row">
+        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+        <div class="large-10 columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+        </div>
+      </div> -->
+       
+ 
+      <hr/>
+ 
+       
+      <!-- <div class="row">
+        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+        <div class="large-10 columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+ 
+ 
+          <h6>2 Comments</h6>
+          <div class="row">
+            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
+            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
+        </div>
+      </div> -->
+       
+ 
+    </div>
+ 
+     
+     
+    <aside class="large-3 columns hide-for-small">
+      <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote This!</span></p>
+      <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote THis!</span></p>
+    </aside>
+ 
+  </div>
+ 
+     <% @products.each do |p| %>
+     <%= p.name %> <br />
+     <% end %>
+   
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-5 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
