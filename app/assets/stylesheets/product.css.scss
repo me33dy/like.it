@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.promoted{
+	background:red;
+}
 
 
 .large-10:last-child {
@@ -36,7 +38,11 @@ input.button.radius:hover{
 	background:red !important;
 }
 
-.product{
-	width: 220px;
+
+.panel {
+	float:none;
 }
 
+.producttitle{
+	color:red;
+}
