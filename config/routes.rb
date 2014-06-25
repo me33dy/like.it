@@ -1,6 +1,7 @@
 Likeit::Application.routes.draw do
 
 
+  get "user/index"
   resource :sessions, only: [:new, :create, :destroy]
 
   resources :companies
