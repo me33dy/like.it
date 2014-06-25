@@ -1,7 +1,3 @@
-
-<h1>Product#new</h1>
-<p>Find me in app/views/product/new.html.erb</p>
-
 <fieldset>
 <legend>Add New Product</legend>
 <%= form_for @product, :html => { :multipart => true } do |f| %>
@@ -11,7 +7,7 @@
   <p>Rewards: <%= f.text_field :reward, class: 'form-control', placeholder: 'reward'%></p>
 
   <p>Likes requirement: <%= f.number_field :requirement, class: 'form-control', placeholder: 'likes requirement'%></p>
-  <%= f.submit "Product", class: 'button radius'%>
+  <%= f.submit "Add a New Product!", class: 'button radius'%>
 <% end %> 
 </fieldset>
 

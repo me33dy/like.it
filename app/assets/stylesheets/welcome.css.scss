@@ -51,7 +51,8 @@ background-color: #3C4661;
 	height:360px;
 }
 
-.minibox p{
+.minibox p {
+	color:white;
 	font-family: 'Brandon Grotesque Bold';
 	text-align: center;
 	font-size:70px;
@@ -77,6 +78,11 @@ h1{
     text-align: center;
 }
 
+#widgettext {
+	font-family: 'Helvetica';
+	font-size: 25px;
+}
+
 .whodiv:last-child{
 	margin:0;
 }
@@ -86,7 +92,7 @@ hr {
 	margin:0 auto;
 	border:none;
 	height:2px;
-	background-color:black;
+	background-color:white;
 }
 
 .whodiv a {
