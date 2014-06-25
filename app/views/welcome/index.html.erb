@@ -18,30 +18,33 @@
 </section>
   -->
 
-	<div class = "sectionbox" id="introbox">
+	<div class = "sectionbox" id="introbox" data-0="background-color:rgb(60,70,97);" data-500="background-color:rgb(255,255,255);">
 		<h1> Like it? </h1>
 		<h2> Advertise through your own Social Network.</h2>
 		<h2> Quick. Easy. Painless </h2>
-
+        
 	</div>
 
+<div class = "sectionbox" id="introbox"     ">
     <div class ="minibox" id="firstmini"><p>Utilize your personal connections</p></div>
     <hr>
     <div class ="minibox" id="secondmini"><p>Reward Advertisers!</p></div>
+    </div>
 
 
 
-	<div class = "sectionbox" id="whoarewe">
+<div class = "sectionbox" id="whoarewe" data-1000="background-color:rgb(255,255,255);" data-1500="background-color:rgb(235,239,255);">
         <div class= "signupin">
 	          <h2><%= link_to "Sign Up for Company", sign_up_path, :class => "sign" %> <h2>
                 <h4><em> Already have an account?</em> <%= link_to "Sign in Here!", sign_in_path %> <h4>
         </div>
 
         <div class= "signupin">
-	       <h2><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %> <h2>
+	          <h2><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %> <h2>
 	   </div>
-
     </div>
+
+    
 
 
 
