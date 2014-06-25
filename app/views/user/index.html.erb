@@ -2,7 +2,14 @@
     <div class="large-12 columns">
       <div class="panel">
         <div id="user-widget">
-		
+
+		<% if current_user %>
+		Welcome <strong><%= current_user.name %></strong>!
+		<%= link_to "Sign out", user_signout_path, id: "sign_out", class: "button tiny radius" %>
+    <%= link_to "General Listing", products_path, class: "button tiny radius"%>
+		<% else %>
+		<% end %>
+
 	</div>
       </div>
     </div>
