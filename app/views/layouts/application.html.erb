@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
 	
 	<div id="user-widget">
 		<% if current_user %>
@@ -20,8 +22,9 @@
 
 		<%= yield %>
 
+
 	<script type="text/javascript">
 	var s = skrollr.init();
 	</script>
-</body>
+
 </html>

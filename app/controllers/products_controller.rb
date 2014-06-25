@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   def create
     @product = Company.first.products.new(product_params)
     if @product.save
+      @product = current_company.products.new(product_params)
       respond_to do |format|
         format.html { redirect_to products_path }
         format.json { render json: @product, status: :created }
@@ -37,7 +38,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-
     if @product.update(product_params)
         respond_to do |format|
           format.html { redirect_to products_path}

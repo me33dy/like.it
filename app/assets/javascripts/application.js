@@ -13,11 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require angular-file-upload/angular-file-upload-html5-shim.min.js
 //= require angular
+//= require angular-file-upload/angular-file-upload.min.js
 //= require angular-resource
 //= require skrollr
 //= require skrollr.menu
 
-//= require_tree .
+//= require_directory .
 
 $(function(){ $(document).foundation(); });
