@@ -2,6 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
+.large-10:last-child {
+	width:100%;
+}
+
 .product{
 	width: 220px;
 }
+
+fieldset {
+	width:400px;
+	margin: 0 auto;
+	margin-top:10%;
+}
+
+input:hover {
+	background: #FFF5CC !important;
+	-webkit-transition: all 500ms;
+}
+
+#product_image {
+	width:160px;
+}
+
+legend{
+	font-size:35px;
+}
+
+input.button.radius:hover{
+	background:red !important;
+}
+
+.product{
+	width: 220px;
+}
+

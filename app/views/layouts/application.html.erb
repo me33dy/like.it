@@ -9,11 +9,28 @@
 </head>
 <body>
 
+<% if current_user %>
+		<span id ="widgettext">Welcome <strong><%= current_user.name %></strong>!</span>
+		<%= link_to "Sign out", user_signout_path, id: "sign_out", class: "button tiny radius" %>
+		<% else %>
+		<% end %>
+
+
+	
+	<div id="user-widget">
+		<% if current_user %>
+		<div id ="nav">Welcome <strong><%= current_user.name %></strong>!
+		<%= link_to "Sign out", user_signout_path, id: "sign_out" %>
+		</div>
+		<% else %>
+		<% end %>
+	</div>
 
 		<%= yield %>
+
 
 	<script type="text/javascript">
 	var s = skrollr.init();
 	</script>
-</body>
+
 </html>
