@@ -1,6 +1,8 @@
 Likeit::Application.routes.draw do
 
 
+  get "product_promotions/create"
+  get "product_promotions/destroy"
   get "user/index"
   resource :sessions, only: [:new, :create, :destroy]
 
