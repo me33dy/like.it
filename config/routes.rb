@@ -1,7 +1,7 @@
 Likeit::Application.routes.draw do
 
 
-  resources :product_promotions, only: [:create, :destroy]
+  resources :product_promotions
   resources :users 
   resource :sessions, only: [:new, :create, :destroy]
 

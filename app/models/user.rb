@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :product_promotions, foreign_key: "promoter_id"
 	has_many :promoting_products, through: :product_promotions
+	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 	def self.from_omniauth(auth)
 		where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

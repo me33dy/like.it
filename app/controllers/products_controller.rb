@@ -3,21 +3,20 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.all
+    @products = Product.paginate(:page => params[:page], :per_page => 12)
     respond_with @products 
   end
 
   def new
-    @product = Company.first.products.build
+@product = current_company.products.new
   end
 
 
   def create
-    @product = Company.first.products.new(product_params)
-    if @product.save
       @product = current_company.products.new(product_params)
+    if @product.save
       respond_to do |format|
-        format.html { redirect_to company_path }
+        format.html { redirect_to current_company }
         format.json { render json: @product, status: :created }
       end
     else
@@ -29,11 +28,12 @@ class ProductsController < ApplicationController
   end
 
   def show
-    respond_with @product
+ 
   end
 
 
   def edit
+
   end
 
   def update
@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
 protected
 
 def set_product
-  @product = Product.find(params[:id])
+  @product = current_company.products.find(params[:id])
 end
 
 def product_params

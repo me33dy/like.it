@@ -20,52 +20,6 @@
                   <%end%></li>
               <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
             </ul>
-         
-            <section class="top-bar-section">
-               
-            <!--   <ul class="right">
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                  <a href="#">Main Item 1</a>
-                  <ul class="dropdown">
-                    <li><label>Section Name</label></li>
-                    <li class="has-dropdown">
-                      <a href="#" class="">Has Dropdown, Level 1</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Dropdown Options</a></li>
-                        <li><a href="#">Dropdown Options</a></li>
-                        <li><a href="#">Level 2</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><label>Section Name</label></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">See all →</a></li>
-                  </ul>
-                </li>
-                <li class="divider"></li>
-                <li><a href="#">Main Item 2</a></li>
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                  <a href="#">Main Item 3</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">See all →</a></li>
-                  </ul>
-                </li>
-              </ul> -->
-            </section>
           </nav>
            
         </div>
@@ -85,7 +39,6 @@
       		          <div class="panel" style="margin-bottom:0px">Need: <%=p.requirement%> likes</div>
       			        <div class="panel" style="margin-bottom:0px">Rewards: <%=p.reward%></div>
 
-
                     
                     <% if p.promoting?(current_user) %>
                     <p class ="button"> This product is now being promoted by <%= current_user.name %></p>
@@ -95,12 +48,13 @@
                       <%= f.submit 'Promote This', :class => "button" %>
                       <% end %>
                       <% end %>
-      			        
-            </div>
-                    <%end%>
+              </div>
+            <%end%>
+
           </div>
         </div>
       </div>
+      <%= will_paginate @products %>
  
       <footer class="row">
         <div class="large-12 columns"><hr/>
