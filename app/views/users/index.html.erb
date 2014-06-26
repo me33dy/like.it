@@ -105,6 +105,7 @@
  
      <% @products.each do |p| %>
      <%= p.name %> <br />
+      <%= link_to 'delete', product_promotion_path(p), method: :delete %>
      <% end %>
    
  

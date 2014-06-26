@@ -26,4 +26,8 @@ class Product < ActiveRecord::Base
   def promote_this!(user)
     product_promotions.create!(promoter_id: user.id)
   end
+
+  def unpromote!(user)
+    product_promotions.find_by(promoter_id: user.id).destroy
+  end
 end
