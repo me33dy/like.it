@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :set_product, :only => [:show, :edit, :update, :destroy]
     respond_to :html, :json 
 
 
@@ -18,7 +17,7 @@ class ProductsController < ApplicationController
     if @product.save
       @product = current_company.products.new(product_params)
       respond_to do |format|
-        format.html { redirect_to products_path }
+        format.html { redirect_to company_path }
         format.json { render json: @product, status: :created }
       end
     else
