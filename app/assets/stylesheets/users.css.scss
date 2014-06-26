@@ -17,11 +17,15 @@ background: #f2f2f2;
 
 .paneltext{
 	font-size: 20px;
-	font-family: "Source Sans Pro";
+	font-family: "Oswald";
 }
 
 .imgholder img {
 	margin-bottom:15px;	
+}
+
+.color {
+	color:green;
 }
 
 
@@ -32,12 +36,20 @@ background: #f2f2f2;
 }
 
 #navstatus {
-	float:right;
-	background:white;
+	float:left;
+	border:1px solid white;
+	
 }
 
 
 aside{
 	overflow-y:scroll;
 	height:500px;
+}
+
+#fat {
+	font-size:90px;
+	font-family: "Oswald";
+	margin:10px;
+	font-weight: bold;
 }

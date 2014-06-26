@@ -1,25 +1,26 @@
-   <% if current_user %>
+   <% if current_user %> 
     <%= link_to "Back To General Listings", products_path, class: "button tiny radius"%>
     <% end %>
 
 
-
 <div class="row">
-    <div class="large-12 columns">
-      <div class="panel">
+    <div>
+      <div class="hide-for-small">
+          <div id ="fat">Hello, <%= current_user.name %></div>
 
       </div>
     </div>
   </div>
-   
+
+
   <div class="row">
      
     <div class="large-3 columns hide-for-small">
       <div class="panel">
-        <h5><%= current_user.name %>'s performance</h5>
+        <h5>Your performance</h5>
           <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
           <section class="section">
-            <h5 class="panel">Products claimed:</h5>
+            <h5 class="panel">Products claimed: <span class ="color"><%= current_user.promoting_products.count %></span></h5>
           </section>
           <section class="section">
             <h5 class="panel">Likes Generated:</h5>
@@ -36,7 +37,7 @@
     </div>
     
      
-     
+
 
     <div class="large-6 columns">
   <% @products.each do |p|%>       
