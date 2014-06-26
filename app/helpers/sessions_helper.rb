@@ -1,5 +1,5 @@
 module SessionsHelper
 	def current_company
-		@current_company ||= cookies[:remember_token] && User.find(cookies[:remember_token])
+		@current_company ||= session[:remember_token] && Company.find(session[:remember_token])
 	end
 end
