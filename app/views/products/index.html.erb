@@ -88,14 +88,14 @@
 
                     
                     <% if p.promoting?(current_user) %>
-                    promoting
+                    <p class ="button"> This product is now being promoted by <%= current_user.name %></p>
                     <% else %>
                       <%= form_for :product_promotion, :url => product_promotions_path do |f| %>
                       <%= f.hidden_field :promoting_product_id, :value => p.id %>
-                      <%= f.submit 'Promote This' %>
+                      <%= f.submit 'Promote This', :class => "button" %>
                       <% end %>
                       <% end %>
-      			        <!-- <div class="button" style="width: 100%">Promote This!!</div> -->
+      			        
             </div>
                     <%end%>
           </div>
