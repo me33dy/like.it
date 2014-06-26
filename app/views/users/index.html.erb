@@ -35,9 +35,6 @@
       </div>
     </div>
     
-     
-
-   <!--  -->
 
         <div class="large-6 columns small-6">
             <% @products.each do |p| %>
@@ -52,18 +49,13 @@
                <br>
                <div class="panel"><%= p.promoting_product.name %></div> 
             <%end%> 
+            <div class="fb-share-button" data-href="<%=p.image.url%>" data-width="80px" data-type="box_count"></div>
             <%= link_to 'delete', product_promotion_path(p), method: :delete %>
           <%end%>
 
         </div>
       </div>
     </div>
-
-     
-    <aside class="large-3 columns hide-for-small">
-         <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote This!</span></p>
-            <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote This!</span></p>
-    </aside>
 
   </div>
 
@@ -78,3 +70,12 @@
       </div>
     </div>
   </footer>
+<script type="text/javascript">
+  $(function(){
+    baseUrl = location.href.substring(0, location.href.lastIndexOf("/"));
+    $(".fb-share-button").each(function(){
+      $(this).attr("data-href", baseUrl + $(this).attr("data-href"));
+      console.log($(this).attr("data-href"));
+    });
+  });
+</script>

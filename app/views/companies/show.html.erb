@@ -1,67 +1,71 @@
-<%= link_to "Edit your account!", edit_company_path, :class => "button"%>
-<%= link_to "Add a product", new_product_path, :class => "button"%>
- 
 
-
-
-
-  <div class="row">
+<div class="row">
     <div class="large-12 columns">
-      <h1 id = "companyname"><%= @company.name.capitalize %>'s Company!</h1>
-      <p></p>
-      <hr/>
+     
+      <div class="row">
+ 
+   
+ 
+        <div class="large-4 small-12 columns">
+ 
+          <img src="http://placehold.it/500x500&text=Logo">
+ 
+          <div class="hide-for-small panel">
+            <h3>Header</h3>
+            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
+            </h5>
+          </div>
+           <div>
+            <%= link_to "Edit your account!", edit_company_path, :class => "button"%>
+            <%= link_to "Add a product", new_product_path, :class => "button"%>
+          </div>
+
+ 
+        </div>
+ 
+     
+ 
+ 
+     
+ 
+          <div class="large-8 columns">
+            <div class="row">
+   
+              <div class="row">
+            <% @company.products.each do |c| %>
+              <div class="large-4 small-6 columns">
+                <div id = "jibox">
+                  <%= image_tag c.image.url(:medium)%>
+                  <br>
+                  Product Name:<%= c.name %> <br>
+                  Product Reward:<%= c.reward %> <br>
+                  Product Requirement: <%= c.requirement %>
+                  </div>
+                </div>
+               <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+ 
+     
+ 
+      <footer class="row">
+        <div class="large-12 columns"><hr/>
+          <div class="row">
+ 
+            <div class="large-6 columns">
+              <p>© Copyright no one at all. Go to town.</p>
+            </div>
+ 
+          </div>
+        </div>
+      </footer>
+ 
+     
+ 
     </div>
   </div>  
-
-
- 
-  
-
-  <div class="row">
- 
-     
-    <div class="large-9 columns" role="content">
-
-      <article>
-        <h3><a href="#">Our Mission:</a></h3>
-        <div class="row">
-          <div class="large-6 columns">
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-            <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-          </div>
-          <div class="large-6 columns">
-            <img src="http://placehold.it/400x240&text=[img]"/>
-          </div>
-        </div>
-
-      </article>
-
-
-      <% @company.products.each do |c| %>
-      <div id = "jibox">
-        Product Name:<%= c.name %> <br>
-        Product Reward:<%= c.reward %> <br>
-        Product Requirement: <%= c.requirement %><br>
-        <%= image_tag c.image.url(:medium)%><br>
-        <%= c.promoters.count %>
-        </div>
-        <% end %>
-
- 
-
-
- 
-      <hr/>
-
-    </div>
-    </div>
- 
-     
- 
- 
-     
- 
- 
-     
-  </div>
  
