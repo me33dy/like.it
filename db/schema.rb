@@ -32,10 +32,6 @@ ActiveRecord::Schema.define(version: 20140626015021) do
     t.integer  "promoting_product_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "product_promotions", ["promoter_id", "promoting_product_id"], name: "index_promoter_and_promoting_product_on_promotion", unique: true, using: :btree
