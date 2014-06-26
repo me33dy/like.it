@@ -44,7 +44,19 @@
     <div class="large-6 columns">
        
       <div class="row">
-        <div class="large-12 columns small-12"><img src="http://placehold.it/500x300&text=[img]"/></div>
+        <div class="large-12 columns small-12">
+            <% @products.each do |p| %>
+            <%= p.name %> <br />
+              <% if !p.image%>
+                <%=form_for p, :html => { :multipart => true } do |f|%>
+                <%= f.file_field :image, class: 'form-control' %>
+               <%= f.submit "Add a New Creation!", class: 'button tiny radius'%>
+               <%end%>
+               <%else%>
+               <%= image_tag p.image.url(:medium), class: "product"%>
+            <%end%> 
+          <%end%>
+        </div>
         <div class="large-12 columns">
 
             <div class="panel" style="float:left">Like Count:</div>
@@ -102,10 +114,6 @@
     </aside>
  
   </div>
- 
-     <% @products.each do |p| %>
-     <%= p.name %> <br />
-     <% end %>
    
  
   <footer class="row">
