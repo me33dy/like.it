@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="large-12 columns">
       <div class="panel">
@@ -8,17 +9,17 @@
     <%= link_to "General Listing", products_path, class: "button tiny radius"%>
     <% else %>
     <% end %>
-      </div>
-    </div>
   </div>
-   
+</div>
+</div>
+
   <div class="row">
     <div class="large-3 columns hide-for-small">
       <div class="panel">
-        <h5><%= current_user.name %>'s performance</h5>
+        <h5>Your performance</h5>
           <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
           <section class="section">
-            <h5 class="panel">Products claimed:</h5>
+            <h5 class="panel">Products claimed: <span class ="color"><%= current_user.promoting_products.count %></span></h5>
           </section>
           <section class="section">
             <h5 class="panel">Likes Generated:</h5>
@@ -35,6 +36,7 @@
     </div>
     
      
+
     <div class="large-6 columns">
       <div class="row">
         <div class="large-6 columns small-6">
@@ -50,19 +52,20 @@
                <br>
                <div class="panel"><%= p.promoting_product.name %></div> 
             <%end%> 
+            <%= link_to 'delete', product_promotion_path(p), method: :delete %>
           <%end%>
         </div>
       </div>
-      <%= will_paginate @products %>
     </div>
+
      
     <aside class="large-3 columns hide-for-small">
-      <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote This!</span></p>
-      <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote THis!</span></p>
+         <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote This!</span></p>
+            <p class="panel" id="featured"><img src="http://placehold.it/300x440&text=[Featured Product]"/><span class="button tiny" style="width:218px">Promote This!</span></p>
     </aside>
- 
+
   </div>
-   
+
  
   <footer class="row">
     <div class="large-12 columns">

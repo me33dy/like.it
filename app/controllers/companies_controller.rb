@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
     if @company.save
     	@current_company = @company
       	respond_to do |format|
-        format.html { redirect_to @company}
+        format.html { redirect_to @company }
         format.json { render json: @company, status: :created }
       end
     else
@@ -40,17 +40,18 @@ class CompaniesController < ApplicationController
 
 
 	def edit
+
 	end
 
 	def update
 		if @company.update(company_params)
 			respond_to do |format|
-				format.html { redirect_to companies_path}
+				format.html { redirect_to @company}
 				format.json { render nothing: true, status: :no_content}
 		end
 	else 
 		respond_to do |format|
-			format.html {render 'edit'}
+			format.html {render 'new'}
 			format.json {render json: @company.errors, status: :unprocessable_entity}
 			end
 		end

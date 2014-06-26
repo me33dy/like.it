@@ -21,6 +21,9 @@ class ProductPromotionsController < ApplicationController
   end
 
   def destroy
+    @product = ProductPromotion.find(params[:id])
+    @product.destroy
+    redirect_to users_path
   end
 
   private

@@ -1,3 +1,56 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.panel1{
+border-style: solid;
+border-width: 1px;
+border-color: #d8d8d8;
+width:auto;
+padding: 1.25rem;
+background: #f2f2f2;
+}
+
+.panel1:last-child {
+	margin-bottom:20px;
+}
+
+.paneltext{
+	font-size: 20px;
+	font-family: "Oswald";
+}
+
+.imgholder img {
+	margin-bottom:15px;	
+}
+
+.color {
+	color:green;
+}
+
+
+
+.large-12 {
+	padding-top:15px;
+	margin-bottom:15px;
+	border: 1px solid #ddd;
+}
+
+#navstatus {
+	float:left;
+	border:1px solid white;
+	
+}
+
+
+aside{
+	overflow-y:scroll;
+	height:500px;
+}
+
+#fat {
+	font-size:90px;
+	font-family: "Oswald";
+	margin:10px;
+	font-weight: bold;
+}
