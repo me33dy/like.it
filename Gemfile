@@ -59,6 +59,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem to upload photo
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+# gem to paginate the page
+gem 'will_paginate', '~> 3.0'
 # Use unicorn as the app server
 # gem 'unicorn'
 
