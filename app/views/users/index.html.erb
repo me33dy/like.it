@@ -52,6 +52,7 @@
                <br>
                <div class="panel"><%= p.promoting_product.name %></div> 
             <%end%> 
+            <div class="fb-share-button" data-href="<%=p.image.url%>" data-width="80px" data-type="box_count"></div>
             <%= link_to 'delete', product_promotion_path(p), method: :delete %>
           <%end%>
         </div>
@@ -77,3 +78,12 @@
       </div>
     </div>
   </footer>
+<script type="text/javascript">
+  $(function(){
+    baseUrl = location.href.substring(0, location.href.lastIndexOf("/"));
+    $(".fb-share-button").each(function(){
+      $(this).attr("data-href", baseUrl + $(this).attr("data-href"));
+      console.log($(this).attr("data-href"));
+    });
+  });
+</script>
