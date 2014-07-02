@@ -27,6 +27,7 @@ gem "cocaine"
 gem 'skrollr-rails'
 # For facebook log in integration
 gem 'omniauth-facebook', '1.4.0'
+# for facebook graph api
 gem 'koala'
 
 gem 'active_model_serializers'
