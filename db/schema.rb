@@ -54,10 +54,6 @@ ActiveRecord::Schema.define(version: 20140626015021) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   add_index "products", ["company_id"], name: "index_products_on_company_id", using: :btree

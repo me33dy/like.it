@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
     respond_to :html, :json 
+    
 
 
   def index
@@ -71,6 +72,11 @@ end
 def product_params
   params.require(:product).permit(:name, :requirement, :reward, :description, :company_id, :image)
 end
+
+    def correct_company
+      @products = current_company.products.find_by(id: params[:id])
+      redirect_to root_url if @products.nil?
+    end
 
 
 
