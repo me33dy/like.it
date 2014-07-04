@@ -1,12 +1,12 @@
-
+<%= link_to "General Listing", products_path, class: "button tiny radius"%>
 <div class="row">
     <div class="large-12 columns">
       <div class="panel">
 
     <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", user_signout_path, id: "sign_out", class: "button tiny radius" %>
-    <%= link_to "General Listing", products_path, class: "button tiny radius"%>
+    <span id ="welcometext">Welcome <%= current_user.name %>!</span>
+    <%#= link_to "Sign out", user_signout_path, id: "sign_out", class: "button tiny radius" %>
+    
     <% else %>
     <% end %>
   </div>
@@ -36,7 +36,7 @@
     </div>
     
 
-        <div class="large-6 columns small-6">
+        <div class="large-9 columns small-6">
             <% @products.each do |p| %>
                 <%=form_for p, :html => { :multipart => true } do |f|%>
                <% if p.image_file_name %>
@@ -49,8 +49,13 @@
                <br>
                <div class="panel"><%= p.promoting_product.name %></div> 
             <%end%> 
-            <div class="fb-share-button" data-href="<%=p.image.url%>" data-width="80px" data-type="box_count"></div>
-            <%= link_to 'delete', product_promotion_path(p), method: :delete %>
+           
+            
+            <div class="panel">Product name: <%= p.promoting_product.name %></div> 
+               <div class="panel">Requirement: <%= p.promoting_product.requirement %></div> 
+               <div class="panel">Rewards: <%= p.promoting_product.reward %></div>
+               <%= link_to 'delete', product_promotion_path(p), method: :delete %><br>
+                <div class="fb-share-button" data-href="<%=p.image.url%>" data-width="80px" data-type="box_count"></div>
           <%end%>
 
         </div>
@@ -65,7 +70,7 @@
       <hr/>
       <div class="row">
         <div class="large-5 columns">
-          <p>© Copyright no one at all. Go to town.</p>
+          <p>©</p>
         </div>
       </div>
     </div>

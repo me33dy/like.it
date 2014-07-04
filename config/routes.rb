@@ -8,7 +8,7 @@ Likeit::Application.routes.draw do
   resources :companies
   resources :products
 
-  root 'welcome#index'
+  root 'welcome#index', as: :welcome
   #change url to sign_up from companies/new
   match '/sign_up', to: 'companies#new', via: 'get'
 

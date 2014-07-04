@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_company, :only => [:new, :create, :update, :edit, :delete]
     respond_to :html, :json 
 
 
@@ -8,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-@product = current_company.products.new
+    @product = current_company.products.new
   end
 
 
@@ -71,6 +72,12 @@ end
 def product_params
   params.require(:product).permit(:name, :requirement, :reward, :description, :company_id, :image)
 end
+
+  def authenticate_company
+    if !current_company
+      redirect_to new_sessions_path
+    end
+  end
 
 
 

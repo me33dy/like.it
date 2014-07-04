@@ -21,6 +21,7 @@ class CompaniesController < ApplicationController
 
     if @company.save
     	@current_company = @company
+    	session[:remember_token] = @company.id.to_s
       	respond_to do |format|
         format.html { redirect_to @company }
         format.json { render json: @company, status: :created }
