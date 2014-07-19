@@ -27,20 +27,33 @@
             
    
             <div class="row">
-              <% @company.products.each do |c| %>
+              <% @company.products.each do |p| %>
                 <div class="large-4 small-6 columns">
-                  <div id = "jibox">
-                    <div class="th">
-                      <%= image_tag c.image.url(:medium)%>
+                  <div id = "jibox" class="panel">
+                    <p><%= link_to p.name, p %></p>
+                    <div class="th">  
+                      <%= image_tag p.image.url(:medium)%>
                     </div>
-                    <br>
-                    Product Name: <%= c.name %> <br>
-                    Product Reward: <%= c.reward %> <br>
-                    Product Requirement: <%= c.requirement %>
+
+                    <div><span><%= link_to 'Edit', edit_product_path(p) %> | 
+                    <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: "Delete #{p.name} ?" } %><span>
+                    </div>
+
+                      <h6 class="subheader">Description</h6>
+                      <%= p.description %>
+                    <div>
+
+                    </div>
+
+                    <div>
+                    Reward: <%= p.reward %><br>
+                    Requirement: <%= p.requirement %> likes
+                    </div>
+
+                    <div>promoted by <%= link_to p.product_promotions.count, p %> people</div>
                   </div>
                 </div>
-               <% end %>
-              
+               <% end %>             
             </div>
           </div>
         </article>

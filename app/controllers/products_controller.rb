@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+    before_action :signed_in_company, :except =>[:show]
+    before_action :correct_company, :only => [:destroy]
+    before_action :set_product, :only => [:edit, :update, :show, :destroy]
     respond_to :html, :json 
     
 
@@ -29,7 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def show
- 
+    @promotions = @product.product_promotions
   end
 
 
@@ -38,9 +41,9 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if @product.update(product_params)
+    if @product.update_attributes(product_params)
         respond_to do |format|
-          format.html { redirect_to products_path}
+          format.html { redirect_to current_company}
           format.json { render nothing: true, status: :no_content}
         end
     else 
@@ -57,7 +60,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html {redirect_to product}
+      format.html {redirect_to current_company}
       format.json { render json: { head: :ok }}
     end
   end
@@ -66,7 +69,7 @@ class ProductsController < ApplicationController
 protected
 
 def set_product
-  @product = current_company.products.find(params[:id])
+  @product = Product.find(params[:id])
 end
 
 def product_params

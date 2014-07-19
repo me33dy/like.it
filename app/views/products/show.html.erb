@@ -1,2 +1,36 @@
-<h1>Product#show</h1>
-<p>Find me in app/views/product/show.html.erb</p>
+<div class="row">
+
+	<% if current_company %>
+		<%= link_to "Home", company_path(current_company) %> | <%= link_to 'Sign out', sessions_path, method: :delete %>
+	<% end %>
+</div>
+
+<div class="row">
+	<div class="small-8 columns">
+		<h4><%= @product.name %> by <%= @product.company.name %></h4>
+		<div class="th">  
+		    <%= image_tag @product.image.url(:large)%>
+		</div>
+	</div>
+
+	<div class="small-4 columns">
+		<p>
+			product description: <%=@product.description %>
+		</p>
+
+		<p>
+			Reward: <%= @product.reward %>
+			<br/>
+			Requirement: <%= @product.requirement %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<% @promotions.each do |promotion| %>
+	<div class="panel">
+		<%= image_tag promotion.image.url(:medium) %>
+	 promoted by p.promoter.name %>
+	 </div>
+	 <% end %>
+
+</div>

@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
 
   #ensure all products must be associated with a company
   validates :company_id, presence: true
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image, :styles => { :medium => "300x300>", :large => "600x600>" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   # validates_attachment_presence :image
   validates_attachment_content_type :image, :content_type => ['image/jpeg']

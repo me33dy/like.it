@@ -4,4 +4,10 @@ module SessionsHelper
 		@current_company ||= session[:remember_token] && Company.find(session[:remember_token])
 
 	end
+
+	def signed_in_company
+    	unless !current_company.nil?
+      		redirect_to signin_url, notice: "Please sign in."
+      	end
+    end
 end

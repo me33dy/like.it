@@ -1,0 +1,14 @@
+
+<%= form_for @product, :html => { :multipart => true } do |f| %>
+
+  <%= f.file_field :image, class: 'form-control' %>
+  <p>Name: <%= f.text_field :name, class: 'form-control', placeholder: 'product name'%></p>
+  <p>Rewards: <%= f.text_field :reward, class: 'form-control', placeholder: 'reward'%></p>
+
+  <p>Likes requirement: <%= f.number_field :requirement, class: 'form-control', placeholder: 'likes requirement'%></p>
+
+  <p>Product Description: <%= f.text_area :description, class:'form-control' %></p>
+  <%= f.submit "Submit", class: 'button radius'%>
+<% end %> 
+
+
