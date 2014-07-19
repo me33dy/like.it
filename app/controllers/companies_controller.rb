@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
 		before_action :set_company, :only => [:show, :edit, :update, :destroy]
+		before_action :correct_company, :only => [:show, :edit, :update, :destroy]
 		respond_to :html, :json	
 
 
@@ -20,7 +21,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-    	@current_company = @company
+    	session[:remember_token] = @company.id
       	respond_to do |format|
         format.html { redirect_to @company }
         format.json { render json: @company, status: :created }
@@ -34,13 +35,10 @@ class CompaniesController < ApplicationController
   end
 
 	def show
-		@company = Company.find(params[:id])
-
 	end
 
 
 	def edit
-
 	end
 
 	def update
@@ -72,6 +70,10 @@ protected
 
 def set_company
 	@company = Company.find(params[:id])
+end
+
+def correct_company
+	redirect_to sign_in_path unless current_company == Company.find(params[:id])
 end
 
 def company_params

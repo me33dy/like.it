@@ -1,53 +1,50 @@
 
 <div class="row">
-    <div class="large-12 columns">
+    <!-- <div class="large-12 columns"> -->
      
       <div class="row">
  
    
  
-        <div class="large-4 small-12 columns">
- 
-          <img src="http://placehold.it/500x500&text=Logo">
- 
-          <div class="hide-for-small panel">
-            <h3>Header</h3>
-            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
-            </h5>
-          </div>
-           <div>
-            <%= link_to "Edit your account!", edit_company_path, :class => "button"%>
-            <%= link_to "Add a product", new_product_path, :class => "button"%>
+        <aside class="small-3 columns">
+          <h3>Welcome <%= @company.name %></h3>
+          <div>
+            <%= link_to "Account setting", edit_company_path, :class => "button expand"%>
+            <%= link_to "Add a product", new_product_path, :class => "button expand"%>
+            <%= link_to "Sign Out", sessions_path, method: :delete, :class => "button expand"%>
+
           </div>
 
  
-        </div>
+        </aside>
  
      
  
  
      
  
-          <div class="large-8 columns">
-            <div class="row">
+          <article class="small-9 columns">
+            
    
-              <div class="row">
-            <% @company.products.each do |c| %>
-              <div class="large-4 small-6 columns">
-                <div id = "jibox">
-                  <%= image_tag c.image.url(:medium)%>
-                  <br>
-                  Product Name:<%= c.name %> <br>
-                  Product Reward:<%= c.reward %> <br>
-                  Product Requirement: <%= c.requirement %>
+            <div class="row">
+              <% @company.products.each do |c| %>
+                <div class="large-4 small-6 columns">
+                  <div id = "jibox">
+                    <div class="th">
+                      <%= image_tag c.image.url(:medium)%>
+                    </div>
+                    <br>
+                    Product Name: <%= c.name %> <br>
+                    Product Reward: <%= c.reward %> <br>
+                    Product Requirement: <%= c.requirement %>
                   </div>
                 </div>
                <% end %>
-              </div>
+              
             </div>
           </div>
-        </div>
-      </div>
+        </article>
+ 
  
  
      
@@ -65,7 +62,5 @@
       </footer>
  
      
- 
-    </div>
-  </div>  
+ </div>
  
