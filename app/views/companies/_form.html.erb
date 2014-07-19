@@ -8,7 +8,8 @@
 	<div class ="formfield">Email:</div><div> <%= c.text_field :email %> </div>
 	<div class ="formfield">Password</div><div> <%= c.password_field :password %> </div>
 	<div class ="formfield">Confirm Password</div><div> <%= c.password_field :password_confirmation %> </div>
-	<%= c.submit 'Submit', class: "button secondary" %>
+	<%= c.submit 'Submit', class: "button primary small" %>
+	<%= link_to 'Cancel', root_path, class: "button secondary small" %>
 		<%end%>
 		</div>
 </div>
