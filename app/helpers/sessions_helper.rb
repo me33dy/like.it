@@ -7,7 +7,7 @@ module SessionsHelper
 
 	def signed_in_company
     	unless !current_company.nil?
-      		redirect_to signin_url, notice: "Please sign in."
+      		redirect_to sign_in_url, notice: "Please sign in."
       	end
     end
 end

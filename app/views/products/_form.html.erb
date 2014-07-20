@@ -9,6 +9,7 @@
 
   <p>Product Description: <%= f.text_area :description, class:'form-control' %></p>
   <%= f.submit "Submit", class: 'button radius small'%>
+  <%= link_to 'Cancel', company_path(current_company), class: "button secondary small" %>
 <% end %> 
 
 
