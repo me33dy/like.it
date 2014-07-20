@@ -1,2 +1,18 @@
 <% provide(:title, 'Edit your company account settings!') %>
-<%= render 'form' %>
+
+<%= form_for @company, html: { class: "signupform" } do |c| %>
+	<%= render 'shared/error_messages' %>
+		<div class ="formfield">Company Name:</div> 
+		<div><%= c.text_field :name %> </div>
+		<div class ="formfield">Edit your company URL:</div> 
+		<div><%= c.text_field :url %> </div>
+		<div class ="formfield">Email:</div>
+		<div> <%= c.text_field :email %> </div>
+		<div class ="formfield">Password</div>
+		<div> <%= c.password_field :password %> </div>
+		<div class ="formfield">Confirm Password</div>
+		<div> <%= c.password_field :password_confirmation %> 
+		</div>
+			<%= c.submit 'Submit', class: "button primary small" %> <%= link_to "Cancel", company_path(current_company), class: "button secondary small" %>
+
+<%end%>
