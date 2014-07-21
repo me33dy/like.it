@@ -1,79 +1,42 @@
-
-<div class="row">
-    <!-- <div class="large-12 columns"> -->
-     
-      <div class="row">
- 
-   
- 
-        <aside class="small-3 columns">
-          <h3>Welcome <%= @company.name %></h3>
+<div class = "companycontainer">
+        <aside class="aside ">
+          <h4>Welcome <%= @company.name.upcase %></h4>
           <div>
             <%= link_to "Account setting", edit_company_path, :class => "button expand"%>
             <%= link_to "Add a product", new_product_path, :class => "button expand"%>
             <%= link_to "Sign Out", sessions_path, method: :delete, :class => "button expand"%>
-
           </div>
-
- 
         </aside>
- 
-     
- 
- 
-     
- 
-          <article class="small-9 columns">
-            
-   
-            <div class="row">
-              <% @company.products.each do |p| %>
-                <div class="large-4 small-6 columns">
-                  <div id = "jibox" class="panel">
-                    <p><%= link_to p.name, p %></p>
-                    <div class="th">  
-                      <%= image_tag p.image.url(:medium)%>
-                    </div>
+      
+ <div class ="companyrow">
+    <h1> Your Products </h1>
+          <% @company.products.each do |p| %>
+            <div class="testing">
+                <h3><%= link_to p.name, p %></h3>
+                  <%= image_tag p.image.url(:medium), class: "productimage"%>
+                <div class = "productbox">
+                      <span class = "producttitles">Description:</span>  <span class = "text"><%= p.description %></span><br><br>
+                      <span class = "producttitles">Reward:</span> <span class = "text"><%= p.reward %></span><br><br>
+                      <span class = "producttitles">Requirement:</span> <span class = "text"><%= p.requirement %> likes<br><br>
+                      <span class = "producttitles">Promoted by:</span> <span class = "text"><%= link_to p.product_promotions.count, p %> people<br><br>
+                     <span><%= link_to 'Edit', edit_product_path(p) %> | 
+                    <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: "Delete #{p.name} ?" } %></span>
+                    <br>
+                </div>
+              </div>
+          <% end %>            
+          </div> 
+          
 
-                    <div><span><%= link_to 'Edit', edit_product_path(p) %> | 
-                    <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: "Delete #{p.name} ?" } %><span>
-                    </div>
 
-                      <h6 class="subheader">Description</h6>
-                      <%= p.description %>
-                    <div>
-
-                    </div>
-
-                    <div>
-                    Reward: <%= p.reward %><br>
-                    Requirement: <%= p.requirement %> likes
-                    </div>
-
-                    <div>promoted by <%= link_to p.product_promotions.count, p %> people</div>
+<!--               <footer class="row">
+                 <div class="large-12 columns"><hr/>
+                    <div class="row">
+                      <div class="large-6 columns">
+                    <p>© Copyright no one at all. Go to town.</p>
                   </div>
                 </div>
-               <% end %>             
-            </div>
-          </div>
-        </article>
- 
- 
- 
-     
- 
-      <footer class="row">
-        <div class="large-12 columns"><hr/>
-          <div class="row">
- 
-            <div class="large-6 columns">
-              <p>© Copyright no one at all. Go to town.</p>
-            </div>
- 
-          </div>
-        </div>
-      </footer>
- 
-     
- </div>
- 
+              </div>
+            </footer> -->
+
+     </div>

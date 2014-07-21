@@ -1,7 +1,9 @@
 <% provide(:title, 'Edit your company account settings!') %>
 
 <%= form_for @company, html: { class: "signupform" } do |c| %>
+	<p>Edit Settings!</p>
 	<%= render 'shared/error_messages' %>
+
 		<div class ="formfield">Company Name:</div> 
 		<div><%= c.text_field :name %> </div>
 		<div class ="formfield">Edit your company URL:</div> 
