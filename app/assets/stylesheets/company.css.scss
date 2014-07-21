@@ -2,12 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
+nav{
+	background:yellow;
+}
+
+.producttitles{
+	font-size:20px;
+	font-weight: bold;
+	font-family:helvetica;
+}
+
+.text{
+	font-size: 15px;
+}
+
 .productimage{
 	float:left;
 	margin-right:20px;
+	border:1px solid #ddd;
+	-webkit-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+
 }
 
-.producttext{
+.productbox{
 	min-height:200px;
 }
 
@@ -16,6 +37,7 @@
 	border:1px solid black;
 	width:50%;
 	margin:auto;
+	box-shadow: 0px 0px 10px black;
 	margin-top:30px;	
 }
 
@@ -31,17 +53,26 @@
 
 .testing{
 	width:100%;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin:10px 0;
+	padding:10px;
+	background-color:rgba(215,215,215,0.4);
 }
 
 .aside{
 	width:200px;
 	float:left;
 	min-height:600px; 
-	margin-right:20px;
+	margin-right:40px;
+
+	h4 {
+		text-align: center;
+	}
 }
 
 .companycontainer{
-	padding:20px;
+	padding:50px 100px 100px 50px;
 }
 
 .companyrow{
@@ -57,4 +88,8 @@
 	}
 }
 
+
+.testing:nth-of-type(odd) {
+    background: #e0e0e0;
+}
 	
