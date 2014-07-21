@@ -9,8 +9,13 @@
   <%= csrf_meta_tags %>
   <%= yield :facebook_meta %>
 </head>
-<body>
 
+<style>
+body, html, .aside {
+  height:100%;
+}
+</style>
+<body>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

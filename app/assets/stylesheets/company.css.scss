@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.productimage{
+	float:left;
+	margin-right:20px;
+}
+
+.producttext{
+	min-height:200px;
+}
 
 .signupform{
 	padding:40px;
@@ -21,8 +29,32 @@
 	color:black;
 }
 
-
-
-#jibox {
-	;
+.testing{
+	width:100%;
 }
+
+.aside{
+	width:200px;
+	float:left;
+	min-height:600px; 
+	margin-right:20px;
+}
+
+.companycontainer{
+	padding:20px;
+}
+
+.companyrow{
+	overflow:scroll;
+	max-height:90vh;
+	padding:20px;
+	border:1px solid #ddd;
+	-webkit-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+
+	h1 {
+		color:black;
+	}
+}
+
+	
