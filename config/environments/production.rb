@@ -36,16 +36,14 @@ Likeit::Application.configure do
   config.assets.version = '1.0'
 
 
-  config.paperclip_defaults = {
+config.paperclip_defaults = {
   :storage => :s3,
-  :s3_protocol => 'http',
-  :bucket => ENV['likeitlikeit'],
   :s3_credentials => {
-    :access_key_id => ENV['AKIAJCLR6ECKHL2JLN6A'],
-    :secret_access_key => ENV['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']
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
-
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
