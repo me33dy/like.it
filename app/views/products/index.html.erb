@@ -1,36 +1,27 @@
 
 <div class="row">
-    <div class="large-12 columns">
- 
-      <div class="row" style="margin-bottom:20px">
-        <div class="large-12 columns">
- 
-          <nav class="top-bar" data-topbar>
-            <ul class="title-area">
-               
-              <li class="name">
-                <h1>
-                  <a href="#">
+    
+          <nav class="top-bar">
+            <ul>            
+              <li class="left">
                     General Listing
-                  </a>
-                </h1>
               </li>
-              <li><% if current_user %>
-                  <%= link_to "Your profile", users_path, class: "button tiny radius"%>
-                  <%end%></li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+              <% if current_user %>
+               <li class="right"><%= link_to "Sign out", user_signout_path, id: "sign_out" %></li>
+              <li class="right"><%= link_to "Your profile", users_path %></li>
+                <%end%>
             </ul>
           </nav>
-           
-        </div>
-      </div>
+                   
+                  
+                  
+                
+              
+
  
-     
- 
-      <div class="row">
 
         <div class="large-12 columns">
-          <div class="row">
+          
             <% @products.each do |p|%>
             <div class="large-3 small-12 columns">
                     <%= image_tag p.image.url(:medium), class: "product"%>
@@ -41,7 +32,7 @@
 
                     
                     <% if p.promoting?(current_user) %>
-                    <p class ="button"> This product is now being promoted by <%= current_user.name %></p>
+                    <p class ="label"> Promoting!</p>
                     <% else %>
                       <%= form_for :product_promotion, :url => product_promotions_path do |f| %>
                       <%= f.hidden_field :promoting_product_id, :value => p.id %>
@@ -51,26 +42,12 @@
               </div>
             <%end%>
 
-          </div>
+          
         </div>
-      </div>
+      
       <%= will_paginate @products %>
- 
-      <footer class="row">
-        <div class="large-12 columns"><hr/>
-          <div class="row">
- 
-            <div class="large-6 columns">
-              <p>© Copyright no one at all. Go to town.</p>
-            </div>
- 
-          </div>
-        </div>
-      </footer>
- 
-     
- 
-    </div>
+      
+
   </div>
 
 

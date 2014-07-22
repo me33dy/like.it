@@ -46,3 +46,44 @@ input.button.radius:hover{
 .producttitle{
 	font-size:20px;
 }
+
+.th{
+	box-shadow: 0 0 10px black;
+	margin-bottom:20px;
+	width:100%;
+}
+
+.large-5 {
+	box-shadow: 0 0 5px #ddd;
+	padding:20px;
+}
+
+.large-7{		
+	box-shadow: 0 0 5px #ddd;
+	padding:20px;
+
+		img{
+		border: 1px solid black;
+		width:15%;
+		margin-right:18%;
+
+	}
+
+}
+
+#promotersbox {
+	overflow:scroll;
+	max-height: 90vh;
+}
+
+.top-bar ul li, .top-bar a{
+	color:white;
+};
+
+.top-bar {
+	padding-top:10px;
+}
+
+.top-bar a {
+	margin: 0 20px;
+}

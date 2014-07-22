@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    before_action :signed_in_company, :except =>[:show]
+    before_action :signed_in_company, :except =>[:show, :index]
     before_action :correct_company, :only => [:destroy]
     before_action :set_product, :only => [:edit, :update, :show, :destroy]
     respond_to :html, :json 

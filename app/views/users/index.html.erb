@@ -14,27 +14,7 @@
 </div>
 
   <div class="row">
-    <div class="large-3 columns hide-for-small">
-      <div class="panel">
-        <h5>Your performance</h5>
-          <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-          <section class="section">
-            <h5 class="panel">Products claimed: <span class ="color"><%= current_user.promoting_products.count %></span></h5>
-          </section>
-          <section class="section">
-            <h5 class="panel">Likes Generated:</h5>
-          </section>
-          <section class="section">
-            <h5 class="panel">Number of Rewards earned:</h5>
-          </section>
-          <section class="section">
-            <h5 class="panel">Products' pending</h5>
-          </section>
-        </div>
- 
-      </div>
-    </div>
-    
+
 
         <div class="large-6 columns small-6">
             <% @products.each do |p| %>
@@ -59,17 +39,6 @@
 
   </div>
 
- 
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr/>
-      <div class="row">
-        <div class="large-5 columns">
-          <p>© Copyright no one at all. Go to town.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
 <script type="text/javascript">
   $(function(){
     baseUrl = location.href.substring(0, location.href.lastIndexOf("/"));
