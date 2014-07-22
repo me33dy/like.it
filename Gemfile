@@ -23,6 +23,8 @@ gem 'jquery-rails'
 
 gem "cocaine"
 
+gem 'aws-sdk'
+
 
 gem 'skrollr-rails'
 # For facebook log in integration
