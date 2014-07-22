@@ -38,8 +38,9 @@ Likeit::Application.configure do
 
   config.paperclip_defaults = {
   :storage => :s3,
+  :s3_protocol => 'http',
+  :bucket => ENV['likeitlikeit'],
   :s3_credentials => {
-    :bucket => ENV['likeitlikeit'],
     :access_key_id => ENV['AKIAJCLR6ECKHL2JLN6A'],
     :secret_access_key => ENV['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']
   }
