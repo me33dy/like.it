@@ -66,8 +66,26 @@ input.button.radius:hover{
 		border: 1px solid black;
 		width:15%;
 		margin-right:18%;
-
 	}
+}
+
+.productsbutton{
+	width:212px;
+	height:40px;
+	font-size: 20px;
+	font-family: "Roboto";
+	background:#ddd;
+}
+
+.promotedbutton{
+	width:212px;
+	text-align: center;
+	line-height:40px;
+	border:1px solid rgb(200,200,200);
+	background:#ddd;
+	height:40px;
+	font-size: 20px;
+	font-family: "Roboto";
 
 }
 
@@ -86,4 +104,8 @@ input.button.radius:hover{
 
 .top-bar a {
 	margin: 0 20px;
+}
+
+.top-bar a:hover {
+	text-decoration: underline;
 }
