@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+.row {
+	background:white;
+}
 
 nav{
 	background:yellow;
@@ -97,4 +99,4 @@ nav{
 .testing:nth-of-type(odd) {
  background-color:rgba(238,238,238,0.4);
 }
-	
+

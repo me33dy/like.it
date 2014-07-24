@@ -4,40 +4,37 @@
       <div class="panel">
 
     <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", user_signout_path, id: "sign_out", class: "button tiny radius" %>
-    <%= link_to "General Listing", products_path, class: "button tiny radius"%>
+    <h3 id ="welcomeh3">Welcome <strong><%= current_user.name %></strong>!</h3>
+    <%= link_to "Sign out", user_signout_path, id: "sign_out", class: "button radius", style: "float:right" %>
+    <%= link_to "General Listing", products_path, class: "button radius", style: "float:right"%>
     <% else %>
     <% end %>
   </div>
 </div>
-</div>
-
-  <div class="row">
 
 
+  
+    <% @products.each do |p| %>
         <div class="large-6 columns small-6">
-            <% @products.each do |p| %>
                 <%=form_for p, :html => { :multipart => true } do |f|%>
                <% if p.image_file_name %>
-                 <%= image_tag p.image.url(:medium), class: "product"%>
+               <h4><%= p.promoting_product.name %></h4>
+                 <%= image_tag p.image.url(:medium), class: "product", style: "float: left"%>
+                <div class="fb-share-button" data-href="<%=p.image.url%>" data-width="80px" data-type="box_count"></div>
                <% else %>
-                 Upload a picture, you dumbass
+                 Upload a Picture!
                 <%= f.file_field :image, class: 'form-control' %>
                <%= f.submit "Add a New Creation!", class: 'button tiny radius'%>
                <% end %>
-               <br>
-               <div class="panel"><%= p.promoting_product.name %></div> 
-            <%end%> 
-            <div class="fb-share-button" data-href="<%=p.image.url%>" data-width="80px" data-type="box_count"></div>
             <%= link_to 'delete', product_promotion_path(p), method: :delete %>
-          <%end%>
 
         </div>
-      </div>
-    </div>
+            <%end%> 
 
-  </div>
+          <%end%>
+
+      </div>
+
 
 <script type="text/javascript">
   $(function(){

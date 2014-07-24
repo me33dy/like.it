@@ -3,6 +3,7 @@
 <%= form_for @product_promotions, :html => { :multipart => true } do |f| %>
 
   <%= f.file_field :image, class: 'form-control' %>
+ 
 
   <%= f.submit "Add a New Promotion!", class: 'button radius'%>
 <% end %> 

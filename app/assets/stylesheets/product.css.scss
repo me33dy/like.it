@@ -49,8 +49,8 @@ input.button.radius:hover{
 
 .th{
 	box-shadow: 0 0 10px black;
+	width:auto;
 	margin-bottom:20px;
-	width:100%;
 }
 
 .large-5 {
@@ -70,7 +70,7 @@ input.button.radius:hover{
 }
 
 .productsbutton{
-	width:212px;
+	width:100%;
 	height:40px;
 	font-size: 20px;
 	font-family: "Roboto";
@@ -78,7 +78,7 @@ input.button.radius:hover{
 }
 
 .promotedbutton{
-	width:212px;
+	width:100%;
 	text-align: center;
 	line-height:40px;
 	border:1px solid rgb(200,200,200);

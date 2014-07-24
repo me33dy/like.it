@@ -14,10 +14,10 @@
           </nav>
                    
 
-        <div class="large-12 columns">
+
           
             <% @products.each do |p|%>
-            <div class="large-3 small-12 columns">
+            <div class="large-3 medium-6 small-12 columns">
                     <%= link_to image_tag(p.image.url(:medium)), p,class: "product"%>
 
                     <div class="panel" style="margin-bottom:0px">Name: <%=p.name%></div>
@@ -37,7 +37,7 @@
             <%end%>
 
           
-        </div>
+    
       
       <%= will_paginate @products %>
       

@@ -11,6 +11,11 @@ padding: 1.25rem;
 background: #f2f2f2;
 }
 
+
+.panel {
+	height:100px;
+}
+
 .panel1:last-child {
 	margin-bottom:20px;
 }
@@ -30,10 +35,13 @@ background: #f2f2f2;
 
 
 
-.large-12 {
-	padding-top:15px;
-	margin-bottom:15px;
-	border: 1px solid #ddd;
+.large-3{
+	padding:15px;
+}
+
+.large-3 {
+	box-shadow: 0 0 10px #ddd;
+
 }
 
 #navstatus {
@@ -49,4 +57,25 @@ background: #f2f2f2;
 	font-family: "Oswald";
 	margin:10px;
 	font-weight: bold;
+}
+
+.fb-share-button {
+	display:inline-block;
+}
+
+
+.large-6 {
+	box-shadow: 0px 0px 3px black;
+	min-height:250px;
+	padding:20px;
+	margin:5px;
+	width:49%;
+		img {
+		margin-right:20px;
+	}
+}
+
+#welcomeh3 {
+	float:left;
+	line-height: 2;
 }
